@@ -1,0 +1,2301 @@
+﻿; Definitions of system screens
+
+; Motif: MUGEN1
+; Optimal resolution: 1280x720
+; Supported languages: en, ja
+
+; Notes about fonts:
+;   - up to 10 fonts can be specified in the [Files] section.
+;   - fonts indexed here do not refer to the ones in fight.def
+;   - fonts are search in directories in the following order:
+;     1. system directory
+;     2. mugen program directory (not recommended to keep custom fonts here)
+;     3. data/ (not recommended to keep custom fonts here)
+;     4. font/
+
+;----------------------------
+[Info]
+name = "MUGEN The Climax Sacrifice +"          
+author = "Infantry00"     
+versiondate = 01,01,2011  
+mugenversion = 1.1       
+localcoord = 1280,720   
+
+[Files]
+spr = system.sff         
+snd = system.snd       
+logo.storyboard =  
+intro.storyboard =
+select = select.def       
+fight = Mugen Exceed Climax/fight.def  
+ 
+;System fonts
+font1 = font/CoalitionMenu.def
+font2 = font/CoalitionMenuAC.def
+font3 = font/Coalition.def
+font4 = font/text.def
+font5 = font/team_mode.def
+;font6 = enter48.def
+;font7 = arcade.def
+font8 = font/arial.def
+font9 = font/infofont.def
+
+;----------------------------
+[ja.Files] ;Japanese Language
+spr = system.sff         
+snd = system.snd       
+logo.storyboard = logo.def     
+intro.storyboard = start.def        
+select = select.def       
+fight = P4U/fight.def
+
+;System fonts
+font1 = font/CoalitionMenu.def
+font2 = font/CoalitionMenuAC.def
+font3 = font/Coalition.def
+font4 = font/textJP.def
+font5 = font/team_mode.def
+;font6 = enter48.def
+;font7 = arcade.def
+font8 = font/arial.def
+font9 = font/infofontJP.def
+
+;----------------------------
+[Music]
+
+title.bgm = data\Menu.mp3
+title.bgm.volume = 70   ;volume scaling factor in percent. 100 is default
+title.bgm.loop = 1        ;Set to 0 to prevent looping
+title.bgm.loopstart = 42023
+title.bgm.loopend = 982899
+
+select.bgm = data\Select.mp3
+select.bgm.volume = 70
+select.bgm.loop = 1
+select.bgm.loopstart = 14000
+select.bgm.loopend = 6788736
+
+vs.bgm = data\ClimaxSacrifice\versus.mp3
+vs.bgm.volume = 
+vs.bgm.loop = 0
+vs.bgm.loopstart =
+vs.bgm.loopend = 
+
+victory.bgm = data\ClimaxSacrifice\winner-screen.mp3
+victory.bgm.volume =
+victory.bgm.loop = 0
+victory.bgm.loopstart =
+victory.bgm.loopend = 
+
+;-------------------------------------------------------------------
+;Title screen definition
+[Title Info]
+fadein.time = 20
+fadeout.time = 0
+menu.pos = 0,360
+menu.item.font = 1,0,1
+menu.item.active.font = 2,0,1
+menu.item.spacing = 0, 45
+; Names for each of the items in the menu. Names must be in quotes.
+; Use "" to disable an item. If all are disabled, goes straight to demo mode
+; (hold Esc to quit demos).
+menu.itemname.arcade = "A"
+menu.itemname.versus = "B"
+menu.itemname.teamarcade = "C"
+menu.itemname.teamversus = "D"
+menu.itemname.teamcoop = "E"
+menu.itemname.survival = "F"
+menu.itemname.survivalcoop = "G"
+menu.itemname.training = "H"
+menu.itemname.watch = "I"
+menu.itemname.options = "J"
+menu.itemname.exit = "K"
+; These parameters define the window in which the items are visible
+; in.
+menu.window.margins.y = 180, 180
+menu.window.visibleitems = 1
+menu.boxcursor.visible = 1     ;Set to 0 to disable default cursor display
+menu.boxcursor.coords = 0,0,0,0
+; These are the sounds for cursor movement
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;----------------------------
+;Title background definition
+[TitleBGdef]
+bgclearcolor = 0,0,0
+
+[TitleBG Note]
+type  = normal
+layerno = 0
+spriteno = 250,0
+start = 0,0
+tile  = 0,0
+mask = 1
+trans = add
+
+[TitleBG BackGround 1]
+type  = normal
+layerno = 0
+spriteno = 205,2
+start = 0,0
+tile  = 0,0
+window = 0,54, 1280,665
+[TitleBG BackGround 2]
+type  = normal
+layerno = 0
+spriteno = 241,1
+start = 0,0
+tile  = 0,0
+mask = 1
+trans = add1
+[TitleBG BackGround 3]
+type  = normal
+layerno = 0
+spriteno = 210,1
+start = 0,0
+mask = 1
+trans = add
+alpha = 108,256
+
+[TitleBG menu line 1]
+type  = anim
+layerno = 1
+actionno = 22
+start = 0,0
+tile  = 0,0
+mask = 1
+[TitleBG menu line 2]
+type  = anim
+layerno = 1
+actionno = 22
+start = 0,360
+tile  = 0,0
+mask = 1
+
+[TitleBG Black] 
+type  = anim
+actionno = 25
+layerno = 1
+start = 0,0
+mask = 1
+[TitleBG Top] 
+type  = anim
+actionno = 26
+layerno = 1
+start = 0,0
+[TitleBG Bot] 
+type  = anim
+actionno = 27
+layerno = 1
+start = 0,665
+[TitleBG 3]
+type  = anim
+layerno = 1
+actionno = 28
+start = 300,670
+mask = 1
+tile  = 0,0
+
+[TitleBG animations 3]
+type  = anim
+actionno = 20
+layerno = 1
+start = 0,0
+mask = 1
+tile  = 0,0
+
+[TitleBG animations 1]
+type  = anim
+actionno = 21
+layerno = 0
+start = 0,0
+mask = 1
+
+[Begin Action 20]
+-1,-1, 0,0, 40
+10,0, -75,0, 1,,AS5D256 
+10,0, -70,0, 1,,AS20D256
+10,0, -65,0, 1,,AS45D256 
+10,0, -60,0, 1,,AS62D256
+10,0, -58,0, 1,,AS84D256
+10,0, -46,0, 1,,AS106D256
+10,0, -34,0, 1,,AS128D256
+10,0, -22,0, 1,,AS140D256
+10,0, -18,0, 1,,AS162D256 
+10,0, -16,0, 1,,AS184D256
+10,0, -14,0, 1,,AS206D256
+10,0, -12,0, 1,,AS228D256 
+10,0, -10,0, 1
+10,0, -9,0, 1
+10,0, -8,0, 1
+10,0, -7,0, 1
+10,0, -6,0, 1
+10,0, -5,0, 1
+10,0, -4,0, 1
+10,0, -3,0, 1
+10,0, -2,0, 1
+10,0, -1,0, 1
+10,0, 0,0, -1
+
+[Begin Action 21]
+-1,-1, 0,0, 40
+10,1, -75,0, 1,,AS5D256 
+10,1, -70,0, 1,,AS20D256
+10,1, -65,0, 1,,AS45D256 
+10,1, -60,0, 1,,AS62D256
+10,1, -58,0, 1,,AS84D256
+10,1, -46,0, 1,,AS106D256
+10,1, -34,0, 1,,AS128D256
+10,1, -22,0, 1,,AS140D256
+10,1, -18,0, 1,,AS162D256 
+10,1, -16,0, 1,,AS184D256
+10,1, -14,0, 1,,AS206D256
+10,1, -12,0, 1,,AS206D256
+10,1, -10,0, 1,,AS206D256
+10,1, -9,0, 1,,AS206D256
+10,1, -8,0, 1,,AS206D256
+10,1, -7,0, 1,,AS206D256
+10,1, -6,0, 1,,AS206D256
+10,1, -5,0, 1,,AS206D256
+10,1, -4,0, 1,,AS206D256
+10,1, -3,0, 1,,AS206D256
+10,1, -2,0, 1,,AS206D256
+10,1, -1,0, 1,,AS206D256
+10,1, 0,0, -1,,AS206D256
+
+[Begin Action 22]
+-1,-1, 0,0, 30
+0,6, -75,0, 1,,AS5D256 
+0,6, -70,0, 1,,AS20D256
+0,6, -65,0, 1,,AS45D256 
+0,6, -60,0, 1,,AS62D256
+0,6, -58,0, 1,,AS84D256
+0,6, -46,0, 1,,AS106D256
+0,6, -34,0, 1,,AS128D256
+0,6, -22,0, 1,,AS140D256
+0,6, -18,0, 1,,AS162D256 
+0,6, -16,0, 1,,AS184D256
+0,6, -14,0, 1,,AS206D256
+0,6, -12,0, 1,,AS228D256 
+0,6, -10,0, 1,,AS228D256 
+0,6, -9,0, 1,,AS228D256 
+0,6, -8,0, 1,,AS228D256 
+0,6, -7,0, 1,,AS228D256 
+0,6, -6,0, 1,,AS228D256 
+0,6, -5,0, 1,,AS228D256 
+0,6, -4,0, 1,,AS228D256 
+0,6, -3,0, 1,,AS228D256 
+0,6, -2,0, 1,,AS228D256 
+0,6, -1,0, 1,,AS228D256 
+0,6, 0,0, -1,,AS228D256
+
+[Begin Action 25]
+240,1, 0,0, 20, , ,1,2
+240,1, 0,0, 1, , ,1,2
+240,1, 0,0, 1, ,AS256D20, 1,2
+240,1, 0,0, 1, ,AS256D45, 1,2
+240,1, 0,0, 1, , AS256D62, 1,2
+240,1, 0,0, 1, , AS256D84, 1,2
+240,1, 0,0, 1, , AS256D106, 1,2
+240,1, 0,0, 1, , AS256D128, 1,2
+240,1, 0,0, 1, , AS256D140, 1,2
+240,1, 0,0, 1, , AS256D162, 1,2
+240,1, 0,0, 1, , AS256D184, 1,2
+240,1, 0,0, 1, , AS256D206, 1,2
+240,1, 0,0, 1, , AS256D228, 1,2
+-1,-1, 0,0, -1
+
+[Begin Action 26]
+-1,-1, 0,0, 10
+0,0, 0,-71, 1, , AS9D256
+0,0, 0,-62, 1, , AS28D247
+0,0, 0,-54, 1, , AS47D228
+0,0, 0,-47, 1, , AS66D209
+0,0, 0,-42, 1, , AS85D190
+0,0, 0,-37, 1, , AS104D171
+0,0, 0,-32, 1, , AS123D152
+0,0, 0,-27, 1, , AS142D133
+0,0, 0,-22, 1, , AS161D128
+0,0, 0,-18, 1, , AS180D128
+0,0, 0,-14, 1, , AS199D128
+0,0, 0,-11, 1, , AS218D128
+0,0, 0,-8, 2, , AS237D128
+0,0, 0,-5, 2, , AS256D128
+0,0, 0,-3, 2, , AS256D128
+0,0, 0,-2, 2, , AS256D128
+0,0, 0,-1, 2, , AS256D128
+0,0, 0,0, -1, , AS256D128
+
+[Begin Action 27]
+-1,-1, 0,0, 10
+0,5, 0,71, 1, , AS9D256
+0,5, 0,62, 1, , AS28D247
+0,5, 0,54, 1, , AS47D228
+0,5, 0,47, 1, , AS66D209
+0,5, 0,42, 1, , AS85D190
+0,5, 0,37, 1, , AS104D171
+0,5, 0,32, 1, , AS123D152
+0,5, 0,27, 1, , AS142D133
+0,5, 0,22, 1, , AS161D128
+0,5, 0,18, 1, , AS180D128
+0,5, 0,14, 1, , AS199D128
+0,5, 0,11, 1, , AS218D128
+0,5, 0,8, 2, , AS237D128
+0,5, 0,5, 2, , AS256D128
+0,5, 0,3, 2, , AS256D128
+0,5, 0,2, 2, , AS256D128
+0,5, 0,1, 2, , AS256D128
+0,5, 0,0, -1, , AS256D128
+
+[Begin Action 28]
+-1,2, 0,0, 30
+1,2, 0,0, 1, ,AS25D256
+1,2, 0,0, 1, ,AS50D256
+1,2, 0,0, 1, , AS75D256
+1,2, 0,0, 1, , AS100D256
+1,2, 0,0, 1, , AS125D256
+1,2, 0,0, 1, , AS150D256
+1,2, 0,0, 1, , AS175D256
+1,2, 0,0, 1, , AS200D256
+1,2, 0,0, 1, , AS225D256
+1,2, 0,0, 1, , AS255D256
+1,2, 0,0, 1, , A
+1,2, 0,0, -1
+
+[Begin Action 29]
+-1,-1, 0,0, 1488
+240,1, 0,0, 1, , AS256D228, 1,2
+240,1, 0,0, 1, , AS256D206, 1,2
+240,1, 0,0, 1, , AS256D184, 1,2
+240,1, 0,0, 1, , AS256D162, 1,2
+240,1, 0,0, 1, , AS256D140, 1,2
+240,1, 0,0, 1, , AS256D128, 1,2
+240,1, 0,0, 1, , AS256D106, 1,2
+240,1, 0,0, 1, , AS256D84, 1,2
+240,1, 0,0, 1, , AS256D62, 1,2
+240,1, 0,0, 1, ,AS256D45, 1,2
+240,1, 0,0, 1, ,AS256D20, 1,2
+240,1, 0,0, -1, , ,1,2
+
+;----------------------------
+[Infobox] ;(new in MUGEN 1.0)
+text.font = 9,0,1
+
+;----------------------------
+[Infobox Text] ;(new in MUGEN 1.0)
+Welcome to M.U.G.E.N The Climax Sacrifice by Infantry00
+_
+* This is a non-commercial use for this software, this is a original motif
+_
+* This Screenpack is a completely 60fps per ticks include Lifebar for Low-High end PC
+_
+* It have free stage and my edited stage Included FightFX by Fantail
+_
+Note: This System Requires to "OpenGL" render system, if disable there the note at the Main Menu Screen, 1.0 version is very soon
+_
+Link: 
+Twitter - @InfantryClimax
+Youtube - Channel Name: Asahina Mirai
+
+;----------------------------
+[ja.Infobox Text] ;(new in MUGEN 1.0)
+M.U.G.E.N 1.1ベータ版をご利用いただいてありがとうございます！
+_
+このメッセージは、data/mugen1/system.defで編集できます。
+
+;-------------------------------------------------------------------
+;Character select definition
+[Select Info]
+fadein.time = 0
+fadeout.time = 15
+rows = 2
+columns = 2
+wrapping = 0              ;1 to let cursor wrap around
+pos = 600,466             ;Position to draw to
+showemptyboxes = 1        ;1 to show empty boxes
+moveoveremptyboxes = 1    ;1 to allow cursor to move over empty boxes
+cell.size = 60,60      ;x,y size of each cell (in pixels)
+cell.spacing = 3         ;Space between each cell
+cell.bg.spr = 150,0       ;Note: Don't use animation for cells
+cell.random.spr = 151,0   ;Icon for random select (don't use animation)
+cell.random.switchtime = 4;Time to wait before changing to another random portrait
+p1.cursor.startcell = 0,0
+p1.cursor.active.anim = 160
+p1.cursor.done.spr = 161,0
+p1.cursor.move.snd = 100,0
+p1.cursor.done.snd = 100,1
+p1.random.move.snd = 100,0
+p2.cursor.startcell = 0,0
+p2.cursor.active.anim = 170
+p2.cursor.done.spr = 171,0
+p2.cursor.blink = 0       ;1 to blink p2's cursor if overlapping p1's
+p2.cursor.move.snd = 100,0
+p2.cursor.done.snd = 100,1
+p2.random.move.snd = 100,0
+random.move.snd.cancel = 0;1 to have random move sound cancel itself when played repeatedly
+stage.move.snd = 100,0
+stage.done.snd = 100,1
+cancel.snd = 100,2
+portrait.spr = 9000,0     ;Do not change from 9000,0
+portrait.offset = 0,0
+portrait.scale = .5,.5
+;title.offset = 640,38  
+;title.font = 4,0,0 
+       
+;Big portraits
+p1.face.spr = 9000,1   
+p1.face.offset = 80,118   
+p1.face.scale = .5,.5
+p1.face.facing = 1
+p1.face.window = 80,118, 320,398
+p2.face.spr = 9000,1
+p2.face.offset = 1199,118
+p2.face.scale = .5,.5
+p2.face.facing = -1
+p2.face.window = 960,118, 1200,398
+
+;Name
+p1.name.offset = 540,435   
+p1.name.font = 4,3,-1     
+p1.name.spacing = 0,-28  
+p2.name.offset = 740,435
+p2.name.font = 4,1,1
+p2.name.spacing = 0,-28
+
+;Stage select
+stage.pos = 100,688
+stage.layerno = 2
+stage.active.font = 8,0,1
+stage.active2.font = 8,2,1
+stage.done.font = 8,0,1,128,128,128
+
+;Team menu
+teammenu.move.wrapping = 0
+p1.teammenu.pos = 640, 719
+
+p1.teammenu.move.snd = 100,0
+p1.teammenu.value.snd = 100,0
+p1.teammenu.done.snd = 100,1
+
+p1.teammenu.item.offset = 0,0
+p1.teammenu.item.font = 0,0, 0
+p1.teammenu.item.active.font = 5,0, 0,
+p1.teammenu.item.active2.font = 5,0, 0,
+
+p1.teammenu.value.icon.offset = -380,-422
+p1.teammenu.value.icon.spr = 181,0
+p1.teammenu.value.spacing = 25,0
+
+;p2 team
+p2.teammenu.pos = 1919, 719
+
+p2.teammenu.move.snd = 100,0
+p2.teammenu.value.snd = 100,0
+p2.teammenu.done.snd = 100,1
+
+p2.teammenu.item.offset = 0,0
+p2.teammenu.item.font = 0,0, 0
+p2.teammenu.item.active.font = 5,0,0,
+p2.teammenu.item.active2.font = 5,0,0,
+
+p2.teammenu.value.icon.offset = -919,-422
+p2.teammenu.value.icon.spr = 181,0
+p2.teammenu.value.spacing = -25,0
+; Debug screen element (can be used for testing fonts)
+;sysexplod0.text =
+;sysexplod0.font =
+[Begin Action 160] ;P1 active cursor
+
+160,0, 0,0, 2, , AS256D150
+160,0, 0,0, 2, , AS256D145
+160,0, 0,0, 2, , AS256D140
+160,0, 0,0, 2, , AS256D135
+160,0, 0,0, 2, , AS256D130
+160,0, 0,0, 2, , AS256D125
+160,0, 0,0, 2, , AS256D120
+160,0, 0,0, 2, , AS256D115
+160,0, 0,0, 2, , AS256D110
+160,0, 0,0, 2, , AS256D105
+160,0, 0,0, 2, , AS256D100
+160,0, 0,0, 2, , AS256D95
+160,0, 0,0, 2, , AS256D90
+160,0, 0,0, 2, , AS256D85
+160,0, 0,0, 2, , AS256D80
+160,0, 0,0, 2, , AS256D75
+160,0, 0,0, 2, , AS256D70
+160,0, 0,0, 2, , AS256D65
+160,0, 0,0, 2, , AS256D60
+160,0, 0,0, 2, , AS256D55
+160,0, 0,0, 2, , AS256D50
+160,0, 0,0, 2, , AS256D45
+160,0, 0,0, 2, , AS256D40
+160,0, 0,0, 2, , AS256D35
+160,0, 0,0, 2, , AS256D30
+160,0, 0,0, 2, , AS256D25
+160,0, 0,0, 2, , AS256D20
+160,0, 0,0, 2, , AS256D15
+160,0, 0,0, 2, , AS256D15
+160,0, 0,0, 2, , AS256D15
+160,0, 0,0, 25, , AS256D15
+160,0, 0,0, 2, , AS256D15
+160,0, 0,0, 2, , AS256D10
+160,0, 0,0, 2, , AS256D15
+160,0, 0,0, 2, , AS256D20
+160,0, 0,0, 2, , AS256D25
+160,0, 0,0, 2, , AS256D30
+160,0, 0,0, 2, , AS256D35
+160,0, 0,0, 2, , AS256D40
+160,0, 0,0, 2, , AS256D45
+160,0, 0,0, 2, , AS256D50
+160,0, 0,0, 2, , AS256D55
+160,0, 0,0, 2, , AS256D60
+160,0, 0,0, 2, , AS256D65
+160,0, 0,0, 2, , AS256D70
+160,0, 0,0, 2, , AS256D75
+160,0, 0,0, 2, , AS256D80
+160,0, 0,0, 2, , AS256D85
+160,0, 0,0, 2, , AS256D90
+160,0, 0,0, 2, , AS256D95
+160,0, 0,0, 2, , AS256D100
+160,0, 0,0, 2, , AS256D105
+160,0, 0,0, 2, , AS256D110
+160,0, 0,0, 2, , AS256D115
+160,0, 0,0, 2, , AS256D120
+160,0, 0,0, 2, , AS256D125
+160,0, 0,0, 2, , AS256D130
+160,0, 0,0, 2, , AS256D135
+160,0, 0,0, 2, , AS256D140
+160,0, 0,0, 2, , AS256D145
+160,0, 0,0, 2, , AS256D150
+
+[Begin Action 170] ;P2 active cursor
+170,0, 0,0, 2, , AS255D256
+170,0, 0,0, 2, , AS250D256
+170,0, 0,0, 2, , AS245D256
+170,0, 0,0, 2, , AS240D256
+170,0, 0,0, 2, , AS235D256
+170,0, 0,0, 2, , AS230D256
+170,0, 0,0, 2, , AS225D256
+170,0, 0,0, 2, , AS220D256
+170,0, 0,0, 2, , AS215D256
+170,0, 0,0, 2, , AS210D256
+170,0, 0,0, 2, , AS205D256
+170,0, 0,0, 2, , AS200D256
+170,0, 0,0, 2, , AS190D256
+170,0, 0,0, 2, , AS185D256
+170,0, 0,0, 2, , AS180D256
+170,0, 0,0, 2, , AS175D256
+170,0, 0,0, 2, , AS170D256
+170,0, 0,0, 2, , AS165D256
+170,0, 0,0, 2, , AS160D256
+170,0, 0,0, 2, , AS155D256
+170,0, 0,0, 2, , AS150D256
+170,0, 0,0, 2, , AS145D256
+170,0, 0,0, 2, , AS140D256
+170,0, 0,0, 2, , AS135D256
+170,0, 0,0, 2, , AS130D256
+170,0, 0,0, 2, , AS125D256
+170,0, 0,0, 2, , AS120D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 25, , AS115D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 2, , AS115D256
+170,0, 0,0, 2, , AS120D256
+170,0, 0,0, 2, , AS125D256
+170,0, 0,0, 2, , AS130D256
+170,0, 0,0, 2, , AS135D256
+170,0, 0,0, 2, , AS140D256
+170,0, 0,0, 2, , AS145D256
+170,0, 0,0, 2, , AS150D256
+170,0, 0,0, 2, , AS155D256
+170,0, 0,0, 2, , AS160D256
+170,0, 0,0, 2, , AS165D256
+170,0, 0,0, 2, , AS170D256
+170,0, 0,0, 2, , AS175D256
+170,0, 0,0, 2, , AS180D256
+170,0, 0,0, 2, , AS185D256
+170,0, 0,0, 2, , AS190D256
+170,0, 0,0, 2, , AS195D256
+170,0, 0,0, 2, , AS200D256
+170,0, 0,0, 2, , AS205D256
+170,0, 0,0, 2, , AS210D256
+170,0, 0,0, 2, , AS215D256
+170,0, 0,0, 2, , AS220D256
+170,0, 0,0, 2, , AS225D256
+170,0, 0,0, 2, , AS230D256
+170,0, 0,0, 2, , AS235D256
+170,0, 0,0, 2, , AS240D256
+170,0, 0,0, 2, , AS245D256
+170,0, 0,0, 2, , AS250D256
+;-----------------------
+;Character select screen background
+[SelectBGdef]
+bgclearcolor = 0,0,0
+
+[SelectBG BackGround 1]
+type  = normal
+layerno = 0
+spriteno = 205,1
+start = 0,0
+tile  = 0,0
+[SelectBG Background 2]
+type  = normal
+layerno = 0
+spriteno = 241,0
+start = 0,0
+mask = 1
+trans = add
+alpha = 175,256
+
+[SelectBG Faded Black]
+type  = normal
+layerno = 0
+spriteno = 102,3
+start = 0,0
+tile  = 0,0
+mask = 1
+
+[SelectBG animations 1]
+type  = anim
+actionno = 100
+layerno = 0
+start = 0,0
+mask = 1
+
+[SelectBG Tile]
+type  = normal
+layerno = 0
+spriteno = 102,0
+start = 0,0
+tile  = 0,0
+mask = 1
+[SelectBG Tile]
+type  = normal
+layerno = 0
+spriteno = 102,1
+start = 0,0
+tile  = 0,0
+mask = 1
+[SelectBG Tile]
+type  = normal
+layerno = 1
+spriteno = 102,2
+start = 0,0
+tile  = 0,0
+mask = 1
+[SelectBG Tile]
+type  = normal
+layerno = 1
+spriteno = 102,2
+start = 0,-375
+tile  = 0,0
+mask = 1
+
+[SelectBG Portrait]
+type  = normal
+layerno = 0
+spriteno = 102,5
+start = 0,0
+tile  = 0,0
+mask = 1
+
+[SelectBG portrait]
+type  = normal
+spriteno = 102,6
+layerno = 1
+start = 0,0
+mask = 1
+
+[SelectBG Background top]
+type  = anim
+actionno = 165
+layerno = 1
+start = 0,0
+mask = 1
+[SelectBG animations 1]
+type  = anim
+actionno = 101
+layerno = 1
+start = 0,0
+mask = 1
+
+[SelectBG portrait]
+type  = anim
+actionno = 105
+layerno = 1
+start = 0,0
+mask = 1
+[SelectBG portrait]
+type  = anim
+actionno = 106
+layerno = 1
+start = 0,0
+mask = 1
+
+[SelectBG  1]
+type  = normal
+layerno = 1
+spriteno = 0,0
+start = 0,0
+mask = 1
+tile  = 0,0
+[SelectBG  2]
+type  = normal
+layerno = 0
+spriteno = 0,5
+start = 0,665
+mask = 1
+tile  = 0,0
+[SelectBG 3]
+type  = normal
+layerno = 1
+spriteno = 1,1
+start = 300,670
+mask = 1
+tile  = 0,0
+
+[SelectBG animations 2]
+type  = anim
+actionno = 102
+layerno = 1
+start = 0,0
+mask = 1
+
+[SelectBG select row 0]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,464
+mask = 1
+[SelectBG select row 0.5]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,496
+mask = 1
+
+[SelectBG select row 1]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,528
+mask = 1
+[SelectBG select row 1.5]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,560
+mask = 1
+
+[SelectBG select row 2]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,592
+mask = 1
+[SelectBG select row 2]
+type  = anim
+actionno = 151
+layerno = 1
+start = 0,624
+mask = 1
+
+
+[Begin Action 100]
+-1,-1, 0,0, 10,
+100,1, -75,0, 1,,AS8D256 
+100,1, -70,0, 1,,AS17D256
+100,1, -65,0, 1,,AS25D256 
+100,1, -60,0, 1,,AS34D256
+100,1, -58,0, 1,,AS42D256
+100,1, -46,0, 1,,AS51D256
+100,1, -34,0, 1,,AS59D256
+100,1, -22,0, 1,,AS68D256
+100,1, -18,0, 1,,AS76D256 
+100,1, -16,0, 1,,AS85D256
+100,1, -14,0, 1,,AS93D256
+100,1, -12,0, 1,,AS102D256 
+100,1, -10,0, 1,,AS110D256
+100,1, -9,0, 1,,AS119D256
+100,1, -8,0, 1,,AS128D256
+100,1, -7,0, 1,,AS136D256
+100,1, -6,0, 1,,AS145D256
+100,1, -5,0, 1,,AS153D256
+100,1, -4,0, 1,,AS162D256
+100,1, -3,0, 1,,AS170D256
+100,1, -2,0, 1,,AS179D256
+100,1, -1,0, 1,,AS187D256
+100,1, 0,0, -1,,AS196D256
+
+[Begin Action 101]
+-1,-1, 0,0, 10,
+100,1, -75,0, 1,,AS5D256 
+100,1, -70,0, 1,,AS20D256
+100,1, -65,0, 1,,AS45D256 
+100,1, -60,0, 1,,AS62D256
+100,1, -58,0, 1,,AS84D256
+100,1, -46,0, 1,,AS106D256
+100,1, -34,0, 1,,AS128D256
+100,1, -22,0, 1,,AS140D256
+100,1, -18,0, 1,,AS162D256 
+100,1, -16,0, 1,,AS184D256
+100,1, -14,0, 1,,AS206D256
+100,1, -12,0, 1,,AS228D256 
+100,1, -10,0, 1,,AS256D256 
+100,1, -9,0, 1,,AS256D256 
+100,1, -8,0, 1,,AS256D256 
+100,1, -7,0, 1,,AS256D256 
+100,1, -6,0, 1,,AS256D256 
+100,1, -5,0, 1,,AS256D256 
+100,1, -4,0, 1,,AS256D256 
+100,1, -3,0, 1,,AS256D256 
+100,1, -2,0, 1,,AS256D256 
+100,1, -1,0, 1,,AS256D256 
+100,1, 0,0, 15, , A
+100,1, 0,0, 1,,AS228D256 
+100,1, 0,0, 1,,AS206D256
+100,1, 0,0, 1,,AS184D256
+100,1, 0,0, 1,,AS162D256 
+100,1, 0,0, 1,,AS140D256
+100,1, 0,0, 1,,AS128D256
+100,1, 0,0, 1,,AS106D256
+100,1, 0,0, 1,,AS84D256
+100,1, 0,0, 1,,AS62D256
+100,1, 0,0, 1,,AS45D256 
+100,1, 0,0, 1,,AS20D256
+100,1, 0,0, 1,,AS5D256
+-1,-1, 0,0, -1,
+
+[Begin Action 102]
+-1,-1, 0,0, 10,
+100,0, -75,0, 1,,AS5D256 
+100,0, -70,0, 1,,AS20D256
+100,0, -65,0, 1,,AS45D256 
+100,0, -60,0, 1,,AS62D256
+100,0, -58,0, 1,,AS84D256
+100,0, -46,0, 1,,AS106D256
+100,0, -34,0, 1,,AS128D256
+100,0, -22,0, 1,,AS140D256
+100,0, -18,0, 1,,AS162D256 
+100,0, -16,0, 1,,AS184D256
+100,0, -14,0, 1,,AS206D256
+100,0, -12,0, 1,,AS228D256 
+100,0, -10,0, 1
+100,0, -9,0, 1
+100,0, -8,0, 1
+100,0, -7,0, 1
+100,0, -6,0, 1
+100,0, -5,0, 1
+100,0, -4,0, 1
+100,0, -3,0, 1
+100,0, -2,0, 1
+100,0, -1,0, 1
+100,0, 0,0, -1
+
+[Begin Action 105]
+-1,-1, 0,0, 15,
+102,4, -106,0, 1,,AS5D256 
+102,4, -93,0, 1,,AS20D256
+102,4, -80,0, 1,,AS45D256 
+102,4, -67,0, 1,,AS62D256
+102,4, -54,0, 1,,AS84D256
+102,4, -41,0, 1,,AS106D256
+102,4, -38,0, 1,,AS128D256
+102,4, -35,0, 1,,AS140D256
+102,4, -32,0, 1,,AS162D256 
+102,4, -29,0, 1,,AS184D256
+102,4, -26,0, 1,,AS206D256
+102,4, -23,0, 1,,AS228D256 
+102,4, -20,0, 1,,A
+102,4, -18,0, 1,,A
+102,4, -16,0, 1,,A
+102,4, -14,0, 1,,A
+102,4, -12,0, 1,,A
+102,4, -10,0, 1,,A
+102,4, -5,0, 1,,A
+102,4, -4,0, 1,,A
+102,4, -3,0, 1,,A
+102,4, -2,0, 1,,A
+102,4, -1,0, 1,,A
+102,4, 0,0, 10, , A
+102,4, 0,0, 1,,AS228D256 
+102,4, 0,0, 1,,AS206D256
+102,4, 0,0, 1,,AS184D256
+102,4, 0,0, 1,,AS162D256 
+102,4, 0,0, 1,,AS140D256
+102,4, 0,0, 1,,AS128D256
+102,4, 0,0, 1,,AS106D256
+102,4, 0,0, 1,,AS84D256
+102,4, 0,0, 1,,AS62D256
+102,4, 0,0, 1,,AS45D256
+102,4, 0,0, 1,,AS20D256
+102,4, 0,0, 1,,AS5D256
+-1,-1, 0,0, -1
+
+[Begin Action 106]
+-1,-1, 0,0, 15
+102,4, 106,0, 1, H, AS5D256
+102,4, 93,0, 1, H, AS20D256
+102,4, 80,0, 1, H, AS45D256
+102,4, 67,0, 1, H, AS62D256
+102,4, 54,0, 1, H, AS84D256
+102,4, 41,0, 1, H, AS106D256
+102,4, 38,0, 1, H, AS128D256
+102,4, 35,0, 1, H, AS140D256
+102,4, 32,0, 1, H, AS162D256
+102,4, 29,0, 1, H, AS184D256
+102,4, 26,0, 1, H, AS206D256
+102,4, 23,0, 1, H, AS228D256
+102,4, 20,0, 1, H, A
+102,4, 18,0, 1, H, A
+102,4, 16,0, 1, H, A
+102,4, 14,0, 1, H, A
+102,4, 12,0, 1, H, A
+102,4, 10,0, 1, H, A
+102,4, 5,0, 1, H, A
+102,4, 4,0, 1, H, A
+102,4, 3,0, 1, H, A
+102,4, 2,0, 1, H, A
+102,4, 1,0, 1, H, A
+102,4, 0,0, 10, H, A
+102,4, 0,0, 1, H, AS228D256
+102,4, 0,0, 1, H, AS206D256
+102,4, 0,0, 1, H, AS184D256
+102,4, 0,0, 1, H, AS162D256
+102,4, 0,0, 1, H, AS140D256
+102,4, 0,0, 1, H, AS128D256
+102,4, 0,0, 1, H, AS106D256
+102,4, 0,0, 1, H, AS84D256
+102,4, 0,0, 1, H, AS62D256
+102,4, 0,0, 1, H, AS45D256
+102,4, 0,0, 1, H, AS20D256
+102,4, 0,0, 1, H, AS5D256
+-1,-1, 0,0, -1, H
+
+[Begin Action 150]
+-1,-1, 0,0, 15,
+150,0, 0,34, 1,,AS5D256
+150,0, 0,22, 1,,AS20D256
+150,0, 0,18, 1,,AS45D256
+150,0, 0,16, 1,,AS62D256
+150,0, 0,14, 1,,AS84D256
+150,0, 0,12, 1,,AS106D256
+150,0, 0,10, 1,,AS128D256
+150,0, 0,9, 1,,AS140D256
+150,0, 0,8, 1,,AS162D256 
+150,0, 0,7, 1,,AS184D256
+150,0, 0,6, 1,,AS206D256
+150,0, 0,5, 1,,AS228D256
+150,0, 0,4, 1,,AS256D256
+150,0, 0,3, 1,,AS256D256
+150,0, 0,2, 1,,AS256D256
+150,0, 0,1, 1,,AS256D256
+150,0, 0,0, 15, , A
+150,0, 0,0, 1,,AS228D256
+150,0, 0,0, 1,,AS206D256
+150,0, 0,0, 1,,AS184D256
+150,0, 0,0, 1,,AS162D256 
+150,0, 0,0, 1,,AS140D256
+150,0, 0,0, 1,,AS128D256
+150,0, 0,0, 1,,AS106D256
+150,0, 0,0, 1,,AS84D256
+150,0, 0,0, 1,,AS62D256
+150,0, 0,0, 1,,AS45D256
+150,0, 0,0, 1,,AS20D256
+150,0, 0,0, 1,,AS5D256
+-1,-1, 0,0, -1
+
+[Begin Action 151]
+-1,-1, 0,0, 15,
+150,10, 0,34, 1,,AS5D256
+150,10, 0,22, 1,,AS20D256
+150,10, 0,18, 1,,AS45D256
+150,10, 0,16, 1,,AS62D256
+150,10, 0,14, 1,,AS84D256
+150,10, 0,12, 1,,AS106D256
+150,10, 0,10, 1,,AS128D256
+150,10, 0,9, 1,,AS140D256
+150,10, 0,8, 1,,AS162D256 
+150,10, 0,7, 1,,AS184D256
+150,10, 0,6, 1,,AS206D256
+150,10, 0,5, 1,,AS228D256
+150,10, 0,4, 1,,AS256D256
+150,10, 0,3, 1,,AS256D256
+150,10, 0,2, 1,,AS256D256
+150,10, 0,1, 1,,AS256D256
+150,10, 0,0, 15, , A
+150,10, 0,0, 1,,AS228D256
+150,10, 0,0, 1,,AS206D256
+150,10, 0,0, 1,,AS184D256
+150,10, 0,0, 1,,AS162D256 
+150,10, 0,0, 1,,AS140D256
+150,10, 0,0, 1,,AS128D256
+150,10, 0,0, 1,,AS106D256
+150,10, 0,0, 1,,AS84D256
+150,10, 0,0, 1,,AS62D256
+150,10, 0,0, 1,,AS45D256
+150,10, 0,0, 1,,AS20D256
+150,10, 0,0, 1,,AS5D256
+-1,-1, 0,0, -1
+
+[Begin Action 165]
+241,0, 0,0, 45
+241,0, 0,0, 1,,AS256D17
+241,0, 0,0, 1,,AS238D34
+241,0, 0,0, 1,,AS221D51
+241,0, 0,0, 1,,AS204D65
+241,0, 0,0, 1,,AS187D85
+241,0, 0,0, 1,,AS170D102
+241,0, 0,0, 1,,AS153D119
+241,0, 0,0, 1,,AS136D136
+241,0, 0,0, 1,,AS119D153
+241,0, 0,0, 1,,AS102D170
+241,0, 0,0, 1,,AS85D187
+241,0, 0,0, 1,,AS68D204
+241,0, 0,0, 1,,AS51D221
+241,0, 0,0, 1,,AS34D238
+241,0, 0,0, 1,,AS17D256
+-1,-1, 0,0, -1
+
+;-------------------------------------------------------------------
+[VS Screen]
+time = 850                ;Time to show screen
+fadein.time = 20
+fadeout.time = 10
+;Match text in arcade modes
+match.text = "stage %i"   ;%i can be used for the match number
+match.offset = 640, 110
+match.font = 3,0,0
+;Big portraits
+p1.spr = 9000, 1
+p1.offset =  209,125
+p1.facing = 1
+p1.scale = .75,.75
+p1.window = 209,150, 569,509
+p2.spr = 9000, 1
+p2.offset = 1070,125
+p2.facing = -1
+p2.scale = .75,.75
+p2.window = 1071,150, 711,509
+;Names
+p1.name.offset = 73,544  ;Position to put name
+p1.name.font = 4,3,1;,0,0,0      ;Set to -1 for no display
+p1.name.spacing = 0,30    ;Space between each name for players on the same team
+p2.name.offset = 1207,544
+p2.name.font = 4,3,-1;,0,0,0
+p2.name.spacing = 0,30
+
+;-----------------------
+;VS Match up screen background
+[VersusBGdef] 
+bgclearcolor = 0,0,0
+
+[VersusBG BackGround 1]
+type  = normal
+layerno = 0
+spriteno = 205,1
+start = 0,0
+tile  = 0,0
+window = 0,54, 1280,665
+[VersusBG Background 2]
+type  = normal
+layerno = 0
+spriteno = 241,1
+start = 0,0
+mask = 1
+trans = add
+alpha = 126,200
+window = 0,54, 1280,665
+
+[VersusBG corner L]
+type  = anim
+actionno = 201
+layerno = 0
+start = 0,0
+mask = 1
+[VersusBG corner R]
+type  = anim
+actionno = 202
+layerno = 0
+start = -1,0
+mask = 1
+[VersusBG Faded Black]
+type  = normal
+layerno = 0
+spriteno = 102,3
+start = 0,0
+tile  = 0,0
+mask = 1
+
+[VersusBG portrait]
+type  = normal
+spriteno = 204,3
+layerno = 0
+start = 0,0
+mask = 1
+[VersusBG portrait]
+type  = normal
+spriteno = 204,2
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG portrait]
+type  = normal
+spriteno = 200,1
+layerno = 0
+start = 0,0
+mask = 1
+
+[VersusBG Background]
+type  = anim
+actionno = 210
+layerno = 1
+start = 0,0
+mask = 1
+
+[VersusBG corner L]
+type  = anim
+actionno = 203
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG corner R]
+type  = anim
+actionno = 204
+layerno = 1
+start = -1,0
+mask = 1
+[VersusBG Name]
+type  = anim
+actionno = 208
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG Name]
+type  = anim
+actionno = 209
+layerno = 1
+start = -1,0
+mask = 1
+
+[VersusBG corner L]
+type  = anim
+actionno = 205
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG corner R]
+type  = anim
+actionno = 206
+layerno = 1
+start = -1,0
+mask = 1
+[VersusBG animations 1]
+type  = anim
+actionno = 200
+layerno = 1
+start = 0,0
+mask = 1
+
+[VersusBG lines L]
+type  = anim
+actionno = 211
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG lines R]
+type  = anim
+actionno = 212
+layerno = 1
+start = -1,0
+mask = 1
+
+[VersusBG Black] 
+type  = anim
+actionno = 25
+layerno = 1
+start = 0,0
+mask = 1
+[VersusBG Top] 
+type  = anim
+actionno = 26
+layerno = 1
+start = 0,0
+[VersusBG Bot] 
+type  = anim
+actionno = 27
+layerno = 1
+start = 0,665
+
+[Begin Action 200]
+-1,-1, 0,0, 60,
+202,0, -75,0, 1,,AS8D256 
+202,0, -70,0, 1,,AS17D256
+202,0, -65,0, 1,,AS25D256 
+202,0, -60,0, 1,,AS34D256
+202,0, -58,0, 1,,AS42D256
+202,0, -46,0, 1,,AS51D256
+202,0, -34,0, 1,,AS59D256
+202,0, -22,0, 1,,AS68D256
+202,0, -18,0, 1,,AS76D256 
+202,0, -16,0, 1,,AS85D256
+202,0, -14,0, 1,,AS93D256
+202,0, -12,0, 1,,AS102D256 
+202,0, -10,0, 1,,AS110D256
+202,0, -9,0, 1,,AS119D256
+202,0, -8,0, 1,,AS128D256
+202,0, -7,0, 1,,AS136D256
+202,0, -6,0, 1,,AS145D256
+202,0, -5,0, 1,,AS153D256
+202,0, -4,0, 1,,AS162D256
+202,0, -3,0, 1,,AS170D256
+202,0, -2,0, 1,,AS179D256
+202,0, -1,0, 1,,AS187D256
+202,0, 0,0, -1,,AS196D256
+
+[Begin Action 201]
+-1,-1, 0,0, 37
+203,0, -106,0, 1,,AS6D256 
+203,0, -93,0, 1,,AS12D256
+203,0, -80,0, 1,,AS19D256 
+203,0, -67,0, 1,,AS25D256
+203,0, -54,0, 1,,AS32D256
+203,0, -41,0, 1,,AS38D256
+203,0, -38,0, 1,,AS44D256
+203,0, -35,0, 1,,AS51D256
+203,0, -32,0, 1,,AS57D256
+203,0, -29,0, 1,,AS64D256
+203,0, -26,0, 1,,AS70D256
+203,0, -23,0, 1,,AS76D256
+203,0, -20,0, 1,,AS83D256
+203,0, -18,0, 1,,AS89D256
+203,0, -16,0, 1,,AS96D256
+203,0, -14,0, 1,,AS102D256
+203,0, -12,0, 1,,AS108D256
+203,0, -10,0, 1,,AS115D256
+203,0, -5,0, 1,,AS121D256
+203,0, -4,0, 1,,AS128D256
+203,0, -3,0, 1,,AS128D256
+203,0, -2,0, 1,,AS128D256
+203,0, -1,0, 1,,AS128D256
+203,0, 0,0, -1, , AS128D256
+
+[Begin Action 202]
+-1,-1, 0,0, 37
+203,0, 106,0, 1, H, AS6D256
+203,0, 93,0, 1, H, AS12D256
+203,0, 80,0, 1, H, AS19D256
+203,0, 67,0, 1, H, AS25D256
+203,0, 54,0, 1, H, AS32D256
+203,0, 41,0, 1, H, AS38D256
+203,0, 38,0, 1, H, AS44D256
+203,0, 35,0, 1, H, AS51D256
+203,0, 32,0, 1, H, AS57D256
+203,0, 29,0, 1, H, AS64D256
+203,0, 26,0, 1, H, AS70D256
+203,0, 23,0, 1, H, AS76D256
+203,0, 20,0, 1, H, AS83D256
+203,0, 18,0, 1, H, AS89D256
+203,0, 16,0, 1, H, AS96D256
+203,0, 14,0, 1, H, AS102D256
+203,0, 12,0, 1, H, AS108D256
+203,0, 10,0, 1, H, AS115D256
+203,0, 5,0, 1, H, AS121D256
+203,0, 4,0, 1, H, AS128D256
+203,0, 3,0, 1, H, AS128D256
+203,0, 2,0, 1, H, AS128D256
+203,0, 1,0, 1, H, AS128D256
+203,0, 0,0, -1, H, AS128D256
+
+[Begin Action 203]
+-1,-1, 0,0, 37
+203,0, -106,0, 1,,AS6D256 
+203,0, -93,0, 1,,AS12D256
+203,0, -80,0, 1,,AS19D256 
+203,0, -67,0, 1,,AS25D256
+203,0, -54,0, 1,,AS32D256
+203,0, -41,0, 1,,AS38D256
+203,0, -38,0, 1,,AS44D256
+203,0, -35,0, 1,,AS51D256
+203,0, -32,0, 1,,AS57D256
+203,0, -29,0, 1,,AS64D256
+203,0, -26,0, 1,,AS70D256
+203,0, -23,0, 1,,AS76D256
+203,0, -20,0, 1,,AS83D256
+203,0, -18,0, 1,,AS89D256
+203,0, -16,0, 1,,AS96D256
+203,0, -14,0, 1,,AS102D256
+203,0, -12,0, 1,,AS108D256
+203,0, -10,0, 1,,AS115D256
+203,0, -5,0, 1,,AS121D256
+203,0, -4,0, 1,,AS128D256
+203,0, -3,0, 1,,AS128D256
+203,0, -2,0, 1,,AS128D256
+203,0, -1,0, 1,,AS128D256
+203,0, 0,0, 6, , AS128D256
+203,0, 0,0, 1,,AS119D256
+203,0, 0,0, 1,,AS110D256
+203,0, 0,0, 1,,AS102D256
+203,0, 0,0, 1,,AS93D256
+203,0, 0,0, 1,,AS85D256
+203,0, 0,0, 1,,AS76D256
+203,0, 0,0, 1,,AS68D256
+203,0, 0,0, 1,,AS59D256
+203,0, 0,0, 1,,AS51D256
+203,0, 0,0, 1,,AS42D256
+203,0, 0,0, 1,,AS34D256
+203,0, 0,0, 1,,AS25D256
+203,0, 0,0, 1,,AS17D256
+203,0, 0,0, 1,,AS8D256
+-1,-1, 0,0, -1,
+
+[Begin Action 204]
+-1,-1, 0,0, 37, H
+203,0, 106,0, 1, H, AS6D256
+203,0, 93,0, 1, H, AS12D256
+203,0, 80,0, 1, H, AS19D256
+203,0, 67,0, 1, H, AS25D256
+203,0, 54,0, 1, H, AS32D256
+203,0, 41,0, 1, H, AS38D256
+203,0, 38,0, 1, H, AS44D256
+203,0, 35,0, 1, H, AS51D256
+203,0, 32,0, 1, H, AS57D256
+203,0, 29,0, 1, H, AS64D256
+203,0, 26,0, 1, H, AS70D256
+203,0, 23,0, 1, H, AS76D256
+203,0, 20,0, 1, H, AS83D256
+203,0, 18,0, 1, H, AS89D256
+203,0, 16,0, 1, H, AS96D256
+203,0, 14,0, 1, H, AS102D256
+203,0, 12,0, 1, H, AS108D256
+203,0, 10,0, 1, H, AS115D256
+203,0, 5,0, 1, H, AS121D256
+203,0, 4,0, 1, H, AS128D256
+203,0, 3,0, 1, H, AS128D256
+203,0, 2,0, 1, H, AS128D256
+203,0, 1,0, 1, H, AS128D256
+203,0, 0,0, 6, H, AS128D256
+203,0, 0,0, 1, H, AS119D256
+203,0, 0,0, 1, H, AS110D256
+203,0, 0,0, 1, H, AS102D256
+203,0, 0,0, 1, H, AS93D256
+203,0, 0,0, 1, H, AS85D256
+203,0, 0,0, 1, H, AS76D256
+203,0, 0,0, 1, H, AS68D256
+203,0, 0,0, 1, H, AS59D256
+203,0, 0,0, 1, H, AS51D256
+203,0, 0,0, 1, H, AS42D256
+203,0, 0,0, 1, H, AS34D256
+203,0, 0,0, 1, H, AS25D256
+203,0, 0,0, 1, H, AS17D256
+203,0, 0,0, 1, H, AS8D256
+-1,-1, 0,0, -1, H
+
+[Begin Action 205]
+-1,-1, 0,0, 40
+204,0, 0,106, 1, , AS12D256
+204,0, 0,93, 1, , AS25D256
+204,0, 0,80, 1, , AS38D256
+204,0, 0,67, 1, , AS51D256
+204,0, 0,54, 1, , AS64D256
+204,0, 0,41, 1, , AS76D256
+204,0, 0,38, 1, , AS89D256
+204,0, 0,35, 1, , AS102D256
+204,0, 0,32, 1, , AS115D256
+204,0, 0,29, 1, , AS128D256
+204,0, 0,26, 1, , AS140D256
+204,0, 0,23, 1, , AS153D256
+204,0, 0,20, 1, , AS166D256
+204,0, 0,18, 1, , AS179D256
+204,0, 0,16, 1, , AS192D256
+204,0, 0,14, 1, , AS204D256
+204,0, 0,12, 1, , AS217D256
+204,0, 0,10, 1, , AS230D256
+204,0, 0,5, 1, , AS243D256
+204,0, 0,4, 1, , A
+204,0, 0,3, 1, , A
+204,0, 0,2, 1, , A
+204,0, 0,1, 1, , A
+204,0, 0,0, 2, , A
+204,0, 0,0, 1, , AS243D256
+204,0, 0,0, 1, , AS230D256
+204,0, 0,0, 1, , AS217D256
+204,0, 0,0, 1, , AS204D256
+204,0, 0,0, 1, , AS192D256
+204,0, 0,0, 1, , AS179D256
+204,0, 0,0, 1, , AS166D256
+204,0, 0,0, 1, , AS153D256
+204,0, 0,0, 1, , AS140D256
+204,0, 0,0, 1, , AS128D256
+204,0, 0,0, 1, , AS115D256
+204,0, 0,0, 1, , AS115D256
+204,0, 0,0, 1, , AS102D256
+204,0, 0,0, 1, , AS89D256
+204,0, 0,0, 1, , AS76D256
+204,0, 0,0, 1, , AS64D256
+204,0, 0,0, 1, , AS51D256
+204,0, 0,0, 1, , AS38D256
+204,0, 0,0, 1, , AS25D256
+204,0, 0,0, 1, , AS12D256
+-1,-1, 0,0, -1, , AS12D256
+
+[Begin Action 206]
+-1,-1, 0,0, 40
+204,0, 0,106, 1, H, AS12D256
+204,0, 0,93, 1, H, AS25D256
+204,0, 0,80, 1, H, AS38D256
+204,0, 0,67, 1, H, AS51D256
+204,0, 0,54, 1, H, AS64D256
+204,0, 0,41, 1, H, AS76D256
+204,0, 0,38, 1, H, AS89D256
+204,0, 0,35, 1, H, AS102D256
+204,0, 0,32, 1, H, AS115D256
+204,0, 0,29, 1, H, AS128D256
+204,0, 0,26, 1, H, AS140D256
+204,0, 0,23, 1, H, AS153D256
+204,0, 0,20, 1, H, AS166D256
+204,0, 0,18, 1, H, AS179D256
+204,0, 0,16, 1, H, AS192D256
+204,0, 0,14, 1, H, AS204D256
+204,0, 0,12, 1, H, AS217D256
+204,0, 0,10, 1, H, AS230D256
+204,0, 0,5, 1, H, AS243D256
+204,0, 0,4, 1, H, A
+204,0, 0,3, 1, H, A
+204,0, 0,2, 1, H, A
+204,0, 0,1, 1, H, A
+204,0, 0,0, 2, H, A
+204,0, 0,0, 1, H, AS243D256
+204,0, 0,0, 1, H, AS230D256
+204,0, 0,0, 1, H, AS217D256
+204,0, 0,0, 1, H, AS204D256
+204,0, 0,0, 1, H, AS192D256
+204,0, 0,0, 1, H, AS179D256
+204,0, 0,0, 1, H, AS166D256
+204,0, 0,0, 1, H, AS153D256
+204,0, 0,0, 1, H, AS140D256
+204,0, 0,0, 1, H, AS128D256
+204,0, 0,0, 1, H, AS115D256
+204,0, 0,0, 1, H, AS115D256
+204,0, 0,0, 1, H, AS102D256
+204,0, 0,0, 1, H, AS89D256
+204,0, 0,0, 1, H, AS76D256
+204,0, 0,0, 1, H, AS64D256
+204,0, 0,0, 1, H, AS51D256
+204,0, 0,0, 1, H, AS38D256
+204,0, 0,0, 1, H, AS25D256
+204,0, 0,0, 1, H, AS12D256
+-1,-1, 0,0, -1, H, AS12D256
+
+[Begin Action 208]
+-1,-1, 0,0, 68
+200,0, -106,0, 1, , AS12D256
+200,0, -93,0, 1,,AS25D256
+200,0, -80,0, 1,,AS38D256
+200,0, -67,0, 1,,AS51D256
+200,0, -54,0, 1,,AS64D256
+200,0, -41,0, 1,,AS76D256
+200,0, -38,0, 1,,AS89D256
+200,0, -35,0, 1,,AS102D256
+200,0, -32,0, 1,,AS115D256
+200,0, -29,0, 1,,AS128D256
+200,0, -26,0, 1,,AS140D256
+200,0, -23,0, 1,,AS153D256
+200,0, -20,0, 1,,AS166D256
+200,0, -18,0, 1,,AS179D256
+200,0, -16,0, 1,,AS192D256
+200,0, -14,0, 1,,AS204D256
+200,0, -12,0, 1,,AS217D256
+200,0, -10,0, 1,,AS230D256
+200,0, -5,0, 1,,AS243D256
+200,0, -4,0, 1, , A
+200,0, -3,0, 1, , A
+200,0, -2,0, 1, , A
+200,0, -1,0, 1, , A
+200,0, 0,0, -1, , A
+
+[Begin Action 209]
+-1,-1, 0,0, 68, H
+200,0, 106,0, 1, H, AS12D256
+200,0, 93,0, 1, H, AS25D256
+200,0, 80,0, 1, H, AS38D256
+200,0, 67,0, 1, H, AS51D256
+200,0, 54,0, 1, H, AS64D256
+200,0, 41,0, 1, H, AS76D256
+200,0, 38,0, 1, H, AS89D256
+200,0, 35,0, 1, H, AS102D256
+200,0, 32,0, 1, H, AS115D256
+200,0, 29,0, 1, H, AS128D256
+200,0, 26,0, 1, H, AS140D256
+200,0, 23,0, 1, H, AS153D256
+200,0, 20,0, 1, H, AS166D256
+200,0, 18,0, 1, H, AS179D256
+200,0, 16,0, 1, H, AS192D256
+200,0, 14,0, 1, H, AS204D256
+200,0, 12,0, 1, H, AS217D256
+200,0, 10,0, 1, H, AS230D256
+200,0, 5,0, 1, H, AS243D256
+200,0, 4,0, 1, H, A
+200,0, 3,0, 1, H, A
+200,0, 2,0, 1, H, A
+200,0, 1,0, 1, H, A
+200,0, 0,0, -1, H, A
+
+[Begin Action 210]
+241,0, 0,0, 65
+241,0, 0,0, 1,,AS256D17
+241,0, 0,0, 1,,AS238D34
+241,0, 0,0, 1,,AS221D51
+241,0, 0,0, 1,,AS204D65
+241,0, 0,0, 1,,AS187D85
+241,0, 0,0, 1,,AS170D102
+241,0, 0,0, 1,,AS153D119
+241,0, 0,0, 1,,AS136D136
+241,0, 0,0, 1,,AS119D153
+241,0, 0,0, 1,,AS102D170
+241,0, 0,0, 1,,AS85D187
+241,0, 0,0, 1,,AS68D204
+241,0, 0,0, 1,,AS51D221
+241,0, 0,0, 1,,AS34D238
+241,0, 0,0, 1,,AS17D256
+-1,-1, 0,0, -1
+
+[Begin Action 211]
+-1,-1, 0,0, 68
+200,2, -106,0, 1, , AS12D256
+200,2, -93,0, 1,,AS25D256
+200,2, -80,0, 1,,AS38D256
+200,2, -67,0, 1,,AS51D256
+200,2, -54,0, 1,,AS64D256
+200,2, -41,0, 1,,AS76D256
+200,2, -38,0, 1,,AS89D256
+200,2, -35,0, 1,,AS102D256
+200,2, -32,0, 1,,AS115D256
+200,2, -29,0, 1,,AS128D256
+200,2, -26,0, 1,,AS140D256
+200,2, -23,0, 1,,AS153D256
+200,2, -20,0, 1,,AS166D256
+200,2, -18,0, 1,,AS179D256
+200,2, -16,0, 1,,AS192D256
+200,2, -14,0, 1,,AS204D256
+200,2, -12,0, 1,,AS217D256
+200,2, -10,0, 1,,AS230D256
+200,2, -5,0, 1,,AS243D256
+200,2, -4,0, 1, , A
+200,2, -3,0, 1, , A
+200,2, -2,0, 1, , A
+200,2, -1,0, 1, , A
+200,2, 0,0, -1, , A
+
+[Begin Action 212]
+-1,-1, 0,0, 68
+200,2, 106,0, 1, H, AS12D256
+200,2, 93,0, 1, H, AS25D256
+200,2, 80,0, 1, H, AS38D256
+200,2, 67,0, 1, H, AS51D256
+200,2, 54,0, 1, H, AS64D256
+200,2, 41,0, 1, H, AS76D256
+200,2, 38,0, 1, H, AS89D256
+200,2, 35,0, 1, H, AS102D256
+200,2, 32,0, 1, H, AS115D256
+200,2, 29,0, 1, H, AS128D256
+200,2, 26,0, 1, H, AS140D256
+200,2, 23,0, 1, H, AS153D256
+200,2, 20,0, 1, H, AS166D256
+200,2, 18,0, 1, H, AS179D256
+200,2, 16,0, 1, H, AS192D256
+200,2, 14,0, 1, H, AS204D256
+200,2, 12,0, 1, H, AS217D256
+200,2, 10,0, 1, H, AS230D256
+200,2, 5,0, 1, H, AS243D256
+200,2, 4,0, 1, H, A
+200,2, 3,0, 1, H, A
+200,2, 2,0, 1, H, A
+200,2, 1,0, 1, H, A
+200,2, 0,0, -1, H, A
+
+;-------------------------------------------------------------------
+;Demo mode definition
+[Demo Mode]
+enabled = 1               ;Set to 1 to enable demo mode, 0 to disable
+select.enabled = 0        ;Set to 1 to display select screen, 0 to disable
+vsscreen.enabled = 0      ;When you hit ESC can restart in VS screen when char select is disable(This Feature is not done yet)
+title.waittime = 1500      ;Time to wait at title before starting demo mode
+fight.endtime = 1500      ;Time to display the fight before returning to title
+fight.playbgm = 1         ;Set to 1 to enable in-fight BGM, 0 to disable
+fight.stopbgm = 0		  ;Set to 1 to stop title BGM (only if playbgm = 0)
+fight.bars.display = 0    ;Set to 1 to display lifebar, 0 to disable
+intro.waitcycles = 0      ;Cycles to wait before intro cutscene is played again
+debuginfo = 1             ;Set to 0 to hide debugging info (debug mode only)
+
+;-------------------------------------------------------------------
+;Continue screen definition
+[Continue Screen]
+enabled = 1               ;Set to 1 to show continue screen, 0 to disable
+pos = 640,0             ;Position
+;***Known issue*** The display elements below use the fight.def resources
+;instead of the ones defined in this file.
+continue.text = "continue"
+continue.font = 3,0,0
+continue.offset = 0,140
+;Inactive and active (selected) YES/NO text
+yes.text = ""
+yes.font = -1
+yes.offset = 0, 0
+yes.active.text = "Y"
+yes.active.font = 8,0,0
+yes.active.offset = 0, 0
+
+no.text = ""
+no.font = -1
+no.offset = 0,0
+no.active.text = "N"
+no.active.font = 8,0,0
+no.active.offset = 0, 0
+
+;-------------------------------------------------------------------
+;Game over screen definition
+[Game Over Screen]
+enabled = 1               ;Set to 1 to show game over screen, 0 to disable
+storyboard = gameover.def              ;Game over storyboard filename
+
+;-------------------------------------------------------------------
+;Victory screen definition
+;This is the screen that is shown when you win a match in arcade mode.
+;It will not be displayed on the last match of arcade mode.
+[Victory Screen]
+enabled = 1
+time = 600                ;Time to show screen
+fadein.time = 8
+fadeout.time = 0
+;Winner's portrait and name
+p1.offset = 460,56
+p1.spr = 9000,2
+p1.facing = 1
+p1.scale = .75,.75
+p1.window = 0,54, 1280,453
+p1.name.offset = 70,480
+p1.name.font = 3,0,1
+p1.name.layerno = 1
+;Win quote text
+winquote.text = "Winner!" ;Default win quote text to show
+winquote.offset = 30,520
+winquote.font = 4,0,1
+winquote.window = 20,54, 1260,665
+winquote.textwrap = w     ;Word wrap
+
+;-----------------------
+;Victory screen background
+[VictoryBGdef] 
+bgclearcolor = 0,0,0
+
+[VictoryBG Background]
+type  = normal
+layerno = 0
+spriteno = 205,1
+start = 0,0
+mask = 1
+[VictoryBG Background 2]
+type  = normal
+layerno = 0
+spriteno = 241,0
+start = 0,0
+mask = 1
+trans = add
+alpha = 175,256
+[VictoryBG Background 2 Top]
+type  = anim
+layerno = 1
+actionno = 230
+start = 0,0
+mask = 1
+
+[VictoryBG Side Corner] 
+type  = anim
+actionno = 202
+mask = 1
+start = 0,0
+[VictoryBG Background 2 Top 2]
+type  = anim
+layerno = 1
+actionno = 231
+start = 0,0
+mask = 1
+[VictoryBG Trans White] 
+type  = normal
+spriteno = 240,6
+mask = 1
+start = 0,0
+[VictoryBG Trans Black] 
+type  = normal
+spriteno = 240,2
+mask = 1
+start = 0,0
+[VictoryBG Trans Fade Name] 
+type  = normal
+spriteno = 240,5
+mask = 1
+start = 0,0
+
+[VictoryBG Side Corner]
+type  = anim
+actionno = 233
+layerno = 1
+start = 0,0
+mask = 1
+
+[VictoryBG line]
+type  = anim
+actionno = 250
+layerno = 1
+start = 0,0
+mask = 1
+tile  = 0,0
+[VictoryBG line]
+type  = anim
+actionno = 259
+layerno = 1
+start = 0,0
+mask = 1
+tile  = 0,0
+
+
+[VictoryBG Text scroll]
+type  = anim
+actionno = 256
+layerno = 1
+start = 0,0
+mask = 1
+tile  = 0,0
+
+[VictoryBG Black] 
+type  = anim
+actionno = 245
+layerno = 1
+start = 0,0
+[VictoryBG Top] 
+type  = anim
+actionno = 246
+layerno = 1
+start = 0,0
+[VictoryBG Bot] 
+type  = anim
+actionno = 247
+layerno = 1
+start = 0,665
+
+[VictoryBG Text] 
+type  = anim
+actionno = 240
+layerno = 1
+start = 0,0
+
+[VictoryBG Fade]
+type  = normal
+layerno = 1
+actionno = 258
+start = 0,0
+mask = 1
+
+[Begin Action 230]
+241,0, 0,0, 160
+241,0, 0,0, 1,,AS256D17
+241,0, 0,0, 1,,AS238D34
+241,0, 0,0, 1,,AS221D51
+241,0, 0,0, 1,,AS204D65
+241,0, 0,0, 1,,AS187D85
+241,0, 0,0, 1,,AS170D102
+241,0, 0,0, 1,,AS153D119
+241,0, 0,0, 1,,AS136D136
+241,0, 0,0, 1,,AS119D153
+241,0, 0,0, 1,,AS102D170
+241,0, 0,0, 1,,AS85D187
+241,0, 0,0, 1,,AS68D204
+241,0, 0,0, 1,,AS51D221
+241,0, 0,0, 1,,AS34D238
+241,0, 0,0, 1,,AS17D256
+-1,-1, 0,0, -1
+
+[Begin Action 231]
+-1,-1, 0,0, 130
+240,2, 0,106, 1, , AS6D256
+240,2, 0,93, 1, , AS12D256
+240,2, 0,80, 1, , AS18D253
+240,2, 0,67, 1, , AS24D247
+240,2, 0,54, 1, , AS30D241
+240,2, 0,41, 1, , AS37D234
+240,2, 0,38, 1, , AS43D238
+240,2, 0,35, 1, , AS39D222
+240,2, 0,32, 1, , AS55D216
+240,2, 0,29, 1, , AS61D210
+240,2, 0,26, 1, , AS68D204
+240,2, 0,23, 1, , AS74D197
+240,2, 0,20, 1, , AS80D191
+240,2, 0,18, 1, , AS86D185
+240,2, 0,16, 1, , AS92D179
+240,2, 0,14, 1, , AS98D173
+240,2, 0,12, 1, , AS105D166
+240,2, 0,10, 1, , AS111D160
+240,2, 0,5, 1, , AS117D154
+240,2, 0,4, 1, , AS123D148
+240,2, 0,3, 1, , AS129D142
+240,2, 0,2, 1, , AS136D136
+240,2, 0,1, 1, , AS136D136
+240,2, 0,0, 9, , AS136D136
+240,2, 0,0, 1, , AS136D136
+240,2, 0,0, 1, , AS129D142
+240,2, 0,0, 1, , AS123D148
+240,2, 0,0, 1, , AS117D154
+240,2, 0,0, 1, , AS111D160
+240,2, 0,0, 1, , AS105D166
+240,2, 0,0, 1, , AS98D173
+240,2, 0,0, 1, , AS92D179
+240,2, 0,0, 1, , AS86D185
+240,2, 0,0, 1, , AS80D191
+240,2, 0,0, 1, , AS74D197
+240,2, 0,0, 1, , AS68D204
+240,2, 0,0, 1, , AS61D210
+240,2, 0,0, 1, , AS55D216
+240,2, 0,0, 1, , AS39D222
+240,2, 0,0, 1, , AS43D238
+240,2, 0,0, 1, , AS37D234
+240,2, 0,0, 1, , AS30D241
+240,2, 0,0, 1, , AS24D247
+240,2, 0,0, 1, , AS18D253
+240,2, 0,0, 1, , AS12D256
+240,2, 0,0, 1, , AS6D256
+-1,-1, 0,0, -1
+
+[Begin Action 233]
+-1,-1, 0,0, 130, H
+203,0, 106,0, 1, H, AS6D256
+203,0, 93,0, 1, H, AS12D256
+203,0, 80,0, 1, H, AS19D256
+203,0, 67,0, 1, H, AS25D256
+203,0, 54,0, 1, H, AS32D256
+203,0, 41,0, 1, H, AS38D256
+203,0, 38,0, 1, H, AS44D256
+203,0, 35,0, 1, H, AS51D256
+203,0, 32,0, 1, H, AS57D256
+203,0, 29,0, 1, H, AS64D256
+203,0, 26,0, 1, H, AS70D256
+203,0, 23,0, 1, H, AS76D256
+203,0, 20,0, 1, H, AS83D256
+203,0, 18,0, 1, H, AS89D256
+203,0, 16,0, 1, H, AS96D256
+203,0, 14,0, 1, H, AS102D256
+203,0, 12,0, 1, H, AS108D256
+203,0, 10,0, 1, H, AS115D256
+203,0, 5,0, 1, H, AS121D256
+203,0, 4,0, 1, H, AS128D256
+203,0, 3,0, 1, H, AS128D256
+203,0, 2,0, 1, H, AS128D256
+203,0, 1,0, 1, H, AS128D256
+203,0, 0,0, 6, H, AS128D256
+203,0, 0,0, 1, H, AS119D256
+203,0, 0,0, 1, H, AS110D256
+203,0, 0,0, 1, H, AS102D256
+203,0, 0,0, 1, H, AS93D256
+203,0, 0,0, 1, H, AS85D256
+203,0, 0,0, 1, H, AS76D256
+203,0, 0,0, 1, H, AS68D256
+203,0, 0,0, 1, H, AS59D256
+203,0, 0,0, 1, H, AS51D256
+203,0, 0,0, 1, H, AS42D256
+203,0, 0,0, 1, H, AS34D256
+203,0, 0,0, 1, H, AS25D256
+203,0, 0,0, 1, H, AS17D256
+203,0, 0,0, 1, H, AS8D256
+-1,-1, 0,0, -1, H
+
+[Begin Action 240]
+-1,-1, 0,0, 10,
+240,0, -75,0, 1,,AS5D256 
+240,0, -70,0, 1,,AS20D256
+240,0, -65,0, 1,,AS45D256 
+240,0, -60,0, 1,,AS62D256
+240,0, -58,0, 1,,AS84D256
+240,0, -46,0, 1,,AS106D256
+240,0, -34,0, 1,,AS128D256
+240,0, -22,0, 1,,AS140D256
+240,0, -18,0, 1,,AS162D256 
+240,0, -16,0, 1,,AS184D256
+240,0, -14,0, 1,,AS206D256
+240,0, -12,0, 1,,AS228D256
+240,0, -10,0, 1
+240,0, -8,0, 1
+240,0, -6,0, 1
+240,0, -4,0, 1
+240,0, -3,0, 2
+240,0, -2,0, 2
+240,0, -1,0, 2
+240,0, 0,0, 40
+240,0, 1,0, 2
+240,0, 2,0, 2
+240,0, 3,0, 2
+240,0, 4,0, 1
+240,0, 6,0, 1
+240,0, 8,0, 1
+240,0, 10,0, 1
+240,0, 12,0, 1,,AS228D256 
+240,0, 14,0, 1,,AS206D256
+240,0, 16,0, 1,,AS184D256
+240,0, 18,0, 1,,AS162D256 
+240,0, 22,0, 1,,AS140D256
+240,0, 34,0, 1,,AS128D256
+240,0, 46,0, 1,,AS106D256
+240,0, 58,0, 1,,AS84D256
+240,0, 60,0, 1,,AS62D256
+240,0, 65,0, 1,,AS45D256 
+240,0, 70,0, 1,,AS20D256
+240,0, 75,0, 1,,AS5D256 
+-1,-1, 0,0, -1
+
+[Begin Action 245]
+240,1, 0,0, 115, , ,1,2
+240,1, 0,0, 1, , ,1,2
+240,1, 0,0, 1, ,AS256D20, 1,2
+240,1, 0,0, 1, ,AS256D45, 1,2
+240,1, 0,0, 1, , AS256D62, 1,2
+240,1, 0,0, 1, , AS256D84, 1,2
+240,1, 0,0, 1, , AS256D106, 1,2
+240,1, 0,0, 1, , AS256D128, 1,2
+240,1, 0,0, 1, , AS256D140, 1,2
+240,1, 0,0, 1, , AS256D162, 1,2
+240,1, 0,0, 1, , AS256D184, 1,2
+240,1, 0,0, 1, , AS256D206, 1,2
+240,1, 0,0, 1, , AS256D228, 1,2
+-1,-1, 0,0, -1
+
+[Begin Action 246]
+-1,-1, 0,0, 100
+0,0, 0,-71, 1, , AS9D256
+0,0, 0,-62, 1, , AS28D247
+0,0, 0,-54, 1, , AS47D228
+0,0, 0,-47, 1, , AS66D209
+0,0, 0,-42, 1, , AS85D190
+0,0, 0,-37, 1, , AS104D171
+0,0, 0,-32, 1, , AS123D152
+0,0, 0,-27, 1, , AS142D133
+0,0, 0,-22, 1, , AS161D114
+0,0, 0,-18, 1, , AS180D95
+0,0, 0,-14, 1, , AS199D76
+0,0, 0,-11, 1, , AS218D57
+0,0, 0,-8, 2, , AS237D38
+0,0, 0,-5, 2, , AS256D19
+0,0, 0,-3, 2
+0,0, 0,-2, 2
+0,0, 0,-1, 2
+0,0, 0,0, -1
+
+[Begin Action 247]
+-1,-1, 0,0, 100
+0,5, 0,71, 1, , AS9D256
+0,5, 0,62, 1, , AS28D247
+0,5, 0,54, 1, , AS47D228
+0,5, 0,47, 1, , AS66D209
+0,5, 0,42, 1, , AS85D190
+0,5, 0,37, 1, , AS104D171
+0,5, 0,32, 1, , AS123D152
+0,5, 0,27, 1, , AS142D133
+0,5, 0,22, 1, , AS161D114
+0,5, 0,18, 1, , AS180D95
+0,5, 0,14, 1, , AS199D76
+0,5, 0,11, 1, , AS218D57
+0,5, 0,8, 2, , AS237D38
+0,5, 0,5, 2, , AS256D19
+0,5, 0,3, 2
+0,5, 0,2, 2
+0,5, 0,1, 2
+0,5, 0,0, -1
+
+[Begin Action 250]
+-1,-1, 0,0, 185
+240,3, -106,0, 1,,AS11D256 
+240,3, -93,0, 1,,AS23D256
+240,3, -80,0, 1,,AS34D256 
+240,3, -67,0, 1,,AS46D256
+240,3, -54,0, 1,,AS58D256
+240,3, -41,0, 1,,AS69D256
+240,3, -38,0, 1,,AS81D256
+240,3, -35,0, 1,,AS93D256
+240,3, -32,0, 1,,AS104D256 
+240,3, -29,0, 1,,AS116D256
+240,3, -26,0, 1,,AS128D256
+240,3, -23,0, 1,,AS139D256 
+240,3, -20,0, 1,,AS151D256 
+240,3, -18,0, 1,,AS162D256 
+240,3, -16,0, 1,,AS174D256 
+240,3, -14,0, 1,,AS186D256 
+240,3, -12,0, 1,,AS197D256 
+240,3, -10,0, 1,,AS209D256 
+240,3, -5,0, 1,,AS221D256 
+240,3, -4,0, 1,,AS232D256 
+240,3, -3,0, 1,,AS244D256 
+240,3, -2,0, 1,,AS256D256 
+240,3, -1,0, 1,,AS256D256 
+240,3, 0,0, -1, , A
+
+[Begin Action 256]
+-1,-1, 0,0, 135
+240,4, -75,0, 1,,AS8D256 
+240,4, -70,0, 1,,AS17D256
+240,4, -65,0, 1,,AS25D256 
+240,4, -60,0, 1,,AS34D256
+240,4, -58,0, 1,,AS42D256
+240,4, -46,0, 1,,AS51D256
+240,4, -34,0, 1,,AS59D256
+240,4, -22,0, 1,,AS68D256
+240,4, -18,0, 1,,AS76D256 
+240,4, -16,0, 1,,AS85D256
+240,4, -14,0, 1,,AS93D256
+240,4, -12,0, 1,,AS102D256 
+240,4, -10,0, 1,,AS110D256
+240,4, -9,0, 1,,AS119D256
+240,4, -8,0, 1,,AS128D256
+240,4, -7,0, 1,,AS136D256
+240,4, -6,0, 1,,AS145D256
+240,4, -5,0, 1,,AS153D256
+240,4, -4,0, 1,,AS162D256
+240,4, -3,0, 1,,AS170D256
+240,4, -2,0, 1,,AS179D256
+240,4, -1,0, 1,,AS187D256
+240,4, 0,0, -1,,AS196D256
+
+[Begin Action 258]
+-1,-1, 0,0, 575
+241,0, 0,0, 1,,AS17D256
+241,0, 0,0, 1,,AS34D238
+241,0, 0,0, 1,,AS51D221
+241,0, 0,0, 1,,AS68D204
+241,0, 0,0, 1,,AS85D187
+241,0, 0,0, 1,,AS102D170
+241,0, 0,0, 1,,AS119D153
+241,0, 0,0, 1,,AS136D136
+241,0, 0,0, 1,,AS153D119
+241,0, 0,0, 1,,AS170D102
+241,0, 0,0, 1,,AS187D85
+241,0, 0,0, 1,,AS204D65
+241,0, 0,0, 1,,AS221D51
+241,0, 0,0, 1,,AS238D34
+241,0, 0,0, 1,,AS256D17
+241,0, 0,0, -1
+
+[Begin Action 259]
+-1,-1, 0,0, 130
+240,6, 0,106, 1, , AS12D256
+240,6, 0,93, 1, , AS25D256
+240,6, 0,80, 1, , AS38D256
+240,6, 0,67, 1, , AS51D256
+240,6, 0,54, 1, , AS64D256
+240,6, 0,41, 1, , AS76D256
+240,6, 0,38, 1, , AS89D256
+240,6, 0,35, 1, , AS102D256
+240,6, 0,32, 1, , AS115D256
+240,6, 0,29, 1, , AS128D256
+240,6, 0,26, 1, , AS140D256
+240,6, 0,23, 1, , AS153D256
+240,6, 0,20, 1, , AS166D256
+240,6, 0,18, 1, , AS179D256
+240,6, 0,16, 1, , AS192D256
+240,6, 0,14, 1, , AS204D256
+240,6, 0,12, 1, , AS217D256
+240,6, 0,10, 1, , AS230D256
+240,6, 0,5, 1, , AS243D256
+240,6, 0,4, 1, , A
+240,6, 0,3, 1, , A
+240,6, 0,2, 1, , A
+240,6, 0,1, 1, , A
+240,6, 0,0, 2, , A
+240,6, 0,0, 1, , AS243D256
+240,6, 0,0, 1, , AS230D256
+240,6, 0,0, 1, , AS217D256
+240,6, 0,0, 1, , AS204D256
+240,6, 0,0, 1, , AS192D256
+240,6, 0,0, 1, , AS179D256
+240,6, 0,0, 1, , AS166D256
+240,6, 0,0, 1, , AS153D256
+240,6, 0,0, 1, , AS140D256
+240,6, 0,0, 1, , AS128D256
+240,6, 0,0, 1, , AS115D256
+240,6, 0,0, 1, , AS115D256
+240,6, 0,0, 1, , AS102D256
+240,6, 0,0, 1, , AS89D256
+240,6, 0,0, 1, , AS76D256
+240,6, 0,0, 1, , AS64D256
+240,6, 0,0, 1, , AS51D256
+240,6, 0,0, 1, , AS38D256
+240,6, 0,0, 1, , AS25D256
+240,6, 0,0, 1, , AS12D256
+-1,-1, 0,0, -1, , AS12D256
+
+;-------------------------------------------------------------------
+;Win screen definition
+;This is the screen that is shown when you win in arcade mode.
+;It will not be displayed if the winning character has an ending.
+[Win Screen]
+enabled = 1               ;Set to 1 to show win screen, 0 to disable
+wintext.text = "congratulations!"
+wintext.font = 3,0,0
+wintext.offset = 640,240
+wintext.displaytime = -1
+wintext.layerno = 2
+fadein.time = 32
+pose.time = 300
+fadeout.time = 64
+
+;-------------------------------------------------------------------
+;Game ending screen definition
+;This screen shows up after the Win Screen.
+;It will not be displayed if the winning character has an ending.
+[Default Ending]
+enabled = 0               ;Set to 1 to show default ending, 0 to disable
+storyboard =              ;Default ending storyboard filename
+
+;-------------------------------------------------------------------
+;Ending credits screen definition
+;This screen shows up after the Win Screen and Ending
+[End Credits]
+enabled = 1               ;Set to 1 to show credits, 0 to disable
+storyboard = gameovercong.def              ;Credits storyboard filename
+
+;-------------------------------------------------------------------
+;Survival mode results screen definition
+;This is the screen that is shown when you win in survival mode.
+;It will not be displayed if the winning character has an ending.
+[Survival Results Screen]
+enabled = 1
+winstext.text = "Rounds survived: %i"  ;Use %i for win counter
+winstext.font = 3,0,0
+winstext.offset = 640,240
+winstext.displaytime = -1
+winstext.layerno = 2
+fadein.time = 32
+show.time = 300
+fadeout.time = 64
+roundstowin = 5           ;Number of rounds to get win pose (lose pose otherwise)
+
+;-------------------------------------------------------------------
+;Options screen definition
+[Option Info]
+fadein.time = 0
+fadeout.time = 10
+title.offset = 640,-9999
+title.font = 4,0,0
+cursor.move.snd = 100,0
+cursor.done.snd = 100,1
+cancel.snd = 100,2
+
+;-------------------
+;Options screen background
+[OptionBGdef] 
+bgclearcolor = 0,0,0
+
+[OptionBG BackGround 1]
+type  = normal
+layerno = 0
+spriteno = 205,0
+start = 0,0
+tile  = 0,0
+[OptionBG BackGround 2]
+type  = normal
+layerno = 0
+spriteno = 210,0
+start = 0,0
+mask = 1
+tile  = 0,0
+
+[OptionBG 1]
+type  = normal
+layerno = 1
+spriteno = 0,0
+start = 0,0
+mask = 1
+tile  = 0,0
+[OptionBG 2]
+type  = normal
+layerno = 1
+spriteno = 0,5
+start = 0,665
+mask = 1
+tile  = 0,0
+[OptionBG 3]
+type  = normal
+layerno = 1
+spriteno = 1,1
+start = 300,670
+mask = 1
+tile  = 0,0
+
+[OptionBG animations 3]
+type  = anim
+actionno = 10
+layerno = 1
+start = 0,0
+mask = 1
+
+[OptionBG animations 1]
+type  = anim
+actionno = 11
+layerno = 0
+start = 0,0
+mask = 1
+
+[Begin Action 10]
+-1,-1, 0,0, 15
+11,0, -75,0, 1,,AS5D256 
+11,0, -70,0, 1,,AS20D256
+11,0, -65,0, 1,,AS45D256 
+11,0, -60,0, 1,,AS62D256
+11,0, -58,0, 1,,AS84D256
+11,0, -46,0, 1,,AS106D256
+11,0, -34,0, 1,,AS128D256
+11,0, -22,0, 1,,AS140D256
+11,0, -18,0, 1,,AS162D256 
+11,0, -16,0, 1,,AS184D256
+11,0, -14,0, 1,,AS206D256
+11,0, -12,0, 1,,AS228D256 
+11,0, -10,0, 1
+11,0, -9,0, 1
+11,0, -8,0, 1
+11,0, -7,0, 1
+11,0, -6,0, 1
+11,0, -5,0, 1
+11,0, -4,0, 1
+11,0, -3,0, 1
+11,0, -2,0, 1
+11,0, -1,0, 1
+11,0, 0,0, -1
+
+[Begin Action 11]
+-1,-1, 0,0, 5,
+-1,-1, 0,0, 10,
+11,1, -75,0, 1,,AS8D256 
+11,1, -70,0, 1,,AS17D256
+11,1, -65,0, 1,,AS25D256 
+11,1, -60,0, 1,,AS34D256
+11,1, -58,0, 1,,AS42D256
+11,1, -46,0, 1,,AS51D256
+11,1, -34,0, 1,,AS59D256
+11,1, -22,0, 1,,AS68D256
+11,1, -18,0, 1,,AS76D256 
+11,1, -16,0, 1,,AS85D256
+11,1, -14,0, 1,,AS93D256
+11,1, -12,0, 1,,AS102D256 
+11,1, -10,0, 1,,AS110D256
+11,1, -9,0, 1,,AS119D256
+11,1, -8,0, 1,,AS128D256
+11,1, -7,0, 1,,AS136D256
+11,1, -6,0, 1,,AS145D256
+11,1, -5,0, 1,,AS153D256
+11,1, -4,0, 1,,AS162D256
+11,1, -3,0, 1,,AS170D256
+11,1, -2,0, 1,,AS179D256
+11,1, -1,0, 1,,AS187D256
+11,1, 0,0, -1,,AS196D256
+
