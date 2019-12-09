@@ -1,0 +1,27 @@
+[Info]
+name ="Goku"
+displayname ="Goku"
+versiondate =30/11/2019
+mugenversion =1.0
+author ="hxs"
+pal.defaults =1
+
+[Files]
+sprite =Son Goku.sff
+anim =Son Goku.air
+sound =Son Goku.snd
+cmd =Son Goku.cmd
+cns =Son Goku.cns
+stcommon =common1.cns
+st =Son Goku.cns
+pal1=1.act
+pal2=2.act
+st1=IA.cns
+st2=Specials.cns
+st3=Supers.cns
+st4=SS1.cns
+st5=SSG.cns
+st6=SSB.cns
+[Arcade]
+intro.storyboard=
+ending.storyboard=
