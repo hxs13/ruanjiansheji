@@ -1,0 +1,145 @@
+[Info]
+name = "Uni's Room"           
+author = "hxs"
+
+[Camera]
+startx =0           
+starty = 0   
+boundleft = -160     
+boundright = 160       
+boundhigh = 0       
+boundlow = 0           
+verticalfollow = .5          
+tension = 70  
+floortension = 50
+overdrawhigh = 120
+overdrawlow = 120
+cuthigh = 0
+cutlow = 0   
+        
+[PlayerInfo]
+p1startx = -170         
+p1starty = 0           
+p1startz = 0           
+p1facing = 1           
+p2startx = 170          
+p2starty = 0          
+p2startz = 0          
+p2facing = -1          
+leftbound  = -1000     
+rightbound =  1000     
+topbound  =  0         
+botbound  =  0         
+
+[Scaling]
+topz     = 0
+botz     = 50
+topscale = 1
+botscale = 1.2
+
+[Bound]
+screenleft = 35     
+screenright = 35      
+
+[StageInfo]
+zoffset = 665.0
+autoturn = 1
+localcoord = 960,720
+xscale = 1
+yscale = 1
+
+[Shadow]
+color = 256,256,256  
+intensity = 70  
+yscale = .2                       
+
+[Music]
+bgmusic = sound/HDN_Uni's_Room.mp3             
+bgvolume = 255         
+
+[BGdef]
+spr = stages/HDN_Uni's_Room.sff
+debugbg = 0
+;=======================================
+[BG Black]
+type  = normal     
+spriteno = 0, 0                       
+start = 0,0        
+delta = 1, 1     
+mask = 1
+
+[BG Blue]
+type  = normal     
+spriteno = 0, 1                       
+start = 0,0        
+delta = 1, 1     
+mask = 1
+trans = add
+
+[BG Green]
+type  = normal     
+spriteno = 0, 2                       
+start = 0,0        
+delta = 1, 1     
+mask = 1
+trans = add
+
+[BG Red]
+type  = normal     
+spriteno = 0, 3                       
+start = 0,0        
+delta = 1, 1     
+mask = 1
+trans = add
+
+[BG Wall lamps Light]
+type = anim
+actionno = 20
+start = 0, 0
+delta = 1,1
+mask = 1
+[begin action 20]
+2,0, 0,0, 9,, AS090D256
+2,0, 0,0, 9,, AS080D256
+2,0, 0,0, 9,, AS070D256
+2,0, 0,0, 9,, AS080D256
+
+[BG Cand Light]
+type = anim
+actionno = 21
+start = 0, 0
+delta = 1,1
+mask = 1
+[begin action 21]
+2,1, 0,0, 2,, AS250D256
+2,1, 0,0, 2,, AS240D256
+
+[BG Desk Lamp]
+type = anim
+actionno = 22
+start = 0, 0
+delta = 1,1
+mask = 1
+[begin action 22]
+2,2, 0,0, 4,, AS005D256
+2,2, 0,0, 4,, AS000D256
+
+[BG Windom Flare]
+type = normal
+spriteno = 3,0
+start = 0,0
+delta = 1, 1
+mask = 1
+trans = addalpha 
+alpha = 60,256
+layerno = 1
+
+[BG Overlay]
+type = normal
+spriteno = 3,1
+start = 0,0
+delta = 1, 
+mask = 1
+trans = addalpha 
+alpha = 20,256
+layerno = 1
